@@ -14,3 +14,5 @@ Gemfile.lock
 scratch/
 .vendor
 .bundle
+.bundle-pr
+.pr_builds
