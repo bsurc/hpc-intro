@@ -7,6 +7,10 @@ This lesson teaches the basics of interacting with high-performance computing
 
 ## Using this material
 
+Easy Docker setup and usage:
+
+1.
+
 NOTE: This is _not_ Carpentries boilerplate! Please read carefully.
 
 1. Follow the instructions found in The Carpentries' [example lesson][ex-lesson]
