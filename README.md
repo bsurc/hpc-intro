@@ -7,9 +7,22 @@ This lesson teaches the basics of interacting with high-performance computing
 
 ## Using this material
 
-Easy Docker setup and usage:
+Docker setup for BSU research computing
 
-1.
+1. Build the image
+    ```bash
+    docker compose build
+    ```
+
+2. Build PR files into `./.pr_builds/pr-<num>`
+    ```bash
+    PR=4 docker compose run --rm --service-ports pr-check
+    ```
+
+3. Build PR and start webserver for it
+    ```bash
+    PR=4 docker compose run --rm --service-ports pr-serve
+    ```
 
 NOTE: This is _not_ Carpentries boilerplate! Please read carefully.
 
