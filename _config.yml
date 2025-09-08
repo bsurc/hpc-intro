@@ -6,14 +6,14 @@
 #------------------------------------------------------------
 
 # Cluster host and scheduler options: the defaults come from
-# Graham at Compute Canada, running Slurm. Other options can
-# be found in the library of snippets,
+# the HPC Carpentry tutorial cluster, running Slurm. Other
+# options can be found in the library of snippets,
 # `_includes/snippets_library`. To use one, replace options
 # below with those in `_config_options.yml` from the
 # library. E.g, to customise for Cirrus at EPCC, running
-# PBS, we could replace the options below with those from
+# Slurm, we could replace the options below with those from
 #
-# _includes/snippets_library/EPCC_Cirrus_pbs/_config_options.yml
+# _includes/snippets_library/EPCC_Cirrus_slurm/_config_options.yml
 #
 # If your cluster is not represented in the library, please
 # copy an existing folder, rename it, and customize for your
@@ -23,7 +23,7 @@
 snippets: "/snippets_library/BSU_Borah_slurm"
 
 local:
-  prompt: "[user@laptop ~]$"
+  prompt: "[you@laptop:~]$"
   bash_shebang: "#!/usr/bin/env bash"
 
 remote:
@@ -35,6 +35,7 @@ remote:
   homedir: "/bsuhome"
   user: "yourUsername"
   prompt: "[yourUsername@borah-login ~]$"
+  module_python3: "python/3.9.7"
   bash_shebang: "#!/usr/bin/env bash"
 
 sched:
@@ -60,6 +61,7 @@ sched:
   info: "sinfo"
   comment: "#SBATCH"
   hist: "sacct"
+  hist_filter: ""
 
 episode_order:
   - 10-hpc-intro
@@ -67,9 +69,10 @@ episode_order:
   - 12-cluster
   - 13-scheduler
   - 01-break
-  - 14-modules
-  - 15-transferring-files
-  - 18-responsibility
+  - 15-modules
+  - 16-transferring-files
+  - 17-parallel
+  - 19-responsibility
 
 #------------------------------------------------------------
 # Values for this lesson
@@ -79,7 +82,7 @@ episode_order:
 # "swc": Software Carpentry
 # "dc":  Data Carpentry
 # "lc":  Library Carpentry
-# "cp":  Carpentries (e.g., instructor traning)
+# "cp":  Carpentries (e.g., instructor training)
 carpentry: "incubator"
 
 # Overall title for pages.

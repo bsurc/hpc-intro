@@ -1,7 +1,7 @@
 ---
 title: "Why use a Cluster?"
-teaching: 15
-exercises: 5
+teaching: 10
+exercises: 0
 questions:
 - "Why would I be interested in High Performance Computing (HPC)?"
 - "What can I expect to learn from this course?"
@@ -22,24 +22,24 @@ Frequently, research problems that use computing can outgrow the capabilities
 of the desktop or laptop computer where they started:
 
 * A statistics student wants to cross-validate a model. This involves running
-  the model 1000 times -- but each run takes an hour. Running on their laptop 
-  will take over a month! The final results are calculated after all 1000 models 
-  have run, but due to limited power of their laptop, the student typically 
-  only runs one model at a time (in __serial__). Since each model is independent, 
+  the model 1000 times -- but each run takes an hour. Running on their laptop
+  will take over a month! The final results are calculated after all 1000 models
+  have run, but due to limited power of their laptop, the student typically
+  only runs one model at a time (in __serial__). Since each model is independent,
   it's theoretically possible to run them all at once (in __parallel__).
 
 * A genomics researcher has been using small sets of sequence data, but
-  soon will be receiving a dataset that is 10 times larger. It's already 
-  challenging to open the datasets on their computer -- analyzing the larger 
+  soon will be receiving a dataset that is 10 times larger. It's already
+  challenging to open the datasets on their computer -- analyzing the larger
   dataset will probably crash it. In order to solve this research problem, a
   computer with __more memory__ would be required to analyze the much larger
   future dataset.
 
 * An engineer is using a fluid dynamics package that has an option to run in
-  parallel. In going from 2D to 3D simulations, the simulation time has more 
-  than tripled. They have tried the parallel option using the 8 cores on their 
-  desktop, but it slows down their computer so much that they can't use it for 
-  anything else and the run time is still very long. If they had access to a 
+  parallel. In going from 2D to 3D simulations, the simulation time has more
+  than tripled. They have tried the parallel option using the 8 cores on their
+  desktop, but it slows down their computer so much that they can't use it for
+  anything else and the run time is still very long. If they had access to a
   computer (or multiple computers) with more cores, they could run their simulation
   more quickly.
 
@@ -58,3 +58,5 @@ separate window, then press `P` to toggle **p**resentation mode.
 [dijkstra]: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 [hyperscale]: https://en.wikipedia.org/wiki/Hyperscale_computing
 [mapreduce]: https://en.wikipedia.org/wiki/MapReduce
+
+{% include new-window-fix.html %}

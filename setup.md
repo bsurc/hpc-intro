@@ -4,9 +4,9 @@ title: Setup
 root: .
 ---
 
-Before the workshop, it is recommended to install or locate a terminal 
-application on with ssh. Though installation help will be provided at 
-the workshop, we recommend that these tools are installed (or at least 
+Before the workshop, it is recommended to install or locate a terminal
+application on with ssh. Though installation help will be provided at
+the workshop, we recommend that these tools are installed (or at least
 downloaded) beforehand.
 
 > ## Bash and SSH
@@ -29,7 +29,7 @@ on a server.
 ### Unix Shells on Windows
 
 Computers with Windows operating systems do not automatically have a Unix Shell
-program installed. We recommend using [MobaXterm](https://mobaxterm.mobatek.net) 
+program installed. We recommend using [MobaXterm](https://mobaxterm.mobatek.net)
 Home Edition for this lesson as it can be used to run local shell commands and
 access the cluster via ssh.
 
@@ -42,7 +42,7 @@ To open Terminal, try one or both of the following:
 
 * In Finder, select the Go menu, then select Utilities. Locate Terminal in the
   Utilities folder and open it.
-* Use the Mac ‘Spotlight’ computer search function (using <kbd>Command</kbd> + 
+* Use the Mac ‘Spotlight’ computer search function (using <kbd>Command</kbd> +
   <kbd>Space</kbd>). Search for: `Terminal` and press <kbd>Return</kbd>.
 
 For an introduction, see [How to Use Terminal on a Mac][mac-terminal].
@@ -66,5 +66,6 @@ for: `Unix shell [your operating system]`.
 [ms-wsl]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 [ms-shell]: https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7
 [mobax-gen]: https://mobaxterm.mobatek.net/documentation.html
-[unix-emulator]: https://faculty.smu.edu/reynolds/unixtut/windows.html
+[putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+[unix-emulator]: https://www.cygwin.com/
 [wsl]: https://docs.microsoft.com/en-us/windows/wsl/install-win10

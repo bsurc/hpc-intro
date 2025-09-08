@@ -1,6 +1,6 @@
 ---
 title: "Scheduler Fundamentals"
-teaching: 35
+teaching: 30
 exercises: 30
 questions:
 - "What is a scheduler and why does a cluster need one?"
@@ -184,7 +184,6 @@ Submit the job and monitor its status:
 
 Fantastic, we've successfully changed the name of our job!
 
-
 ### Resource Requests
 
 What about more important changes, such as the number of cores and memory for
@@ -238,8 +237,6 @@ later episode of this lesson.
 > > Why are the {{ site.sched.name }} runtime and `sleep` time not identical?
 > {: .solution}
 {: .challenge}
-
-{% include {{ site.snippets }}/scheduler/print-sched-variables.snip %}
 
 Resource requests are typically binding. If you exceed them, your job will be
 killed. Let's use wall time as an example. We will request 1 minute of
@@ -339,7 +336,12 @@ logged on. You can also verify this with `hostname`.
 When you are done with the interactive job, type `exit` or <kbd>ctrl</kbd> +
 <kbd>D</kbd> to quit your session.
 
+You can also use many of the interactive apps on
+[ondemand.boisestate.edu][ondemand].
+
 {% include links.md %}
 
-[fshs]: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
-[hisat]: https://ccb.jhu.edu/software/hisat2/index.shtml
+[hisat]: https://daehwankimlab.github.io/hisat2/
+[ondemand]: https://ondemand.boisestate.edu
+
+{% include new-window-fix.html %}

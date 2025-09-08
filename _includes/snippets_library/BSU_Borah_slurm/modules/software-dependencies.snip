@@ -1,1 +1,58 @@
-<!-- CTCMS does not use modules -->
+To demonstrate, let's use `module list`. `module list` shows all loaded
+software modules.
+
+```
+{{ site.remote.prompt }} module list
+```
+{: .language-bash}
+
+```
+Currently Loaded Modulefiles:
+ 1) slurm/slurm/23.02.7
+```
+{: .output}
+
+```
+{{ site.remote.prompt }} module load gromacs/2024.2
+{{ site.remote.prompt }} module list
+```
+{: .language-bash}
+
+```
+Currently Loaded Modulefiles:
+ 1) slurm/slurm/23.02.7   4) openmpi/4.1.3/gcc/12.1.0
+ 2) borah-base/default    5) cuda_toolkit/12.3.0
+ 3) gcc/12.1.0            6) gromacs/2024.2/openmpi/4.1.3/gcc/12.1.0
+```
+{: .output}
+
+So in this case, loading the `gromacs` module (a bioinformatics software
+package), also loaded `openmpi/4.1.3/gcc/12.1.0` and `gcc/12.1.0` as well.
+Let's try unloading the `gromacs` package.
+
+```
+{{ site.remote.prompt }} module unload gromacs
+{{ site.remote.prompt }} module list
+```
+{: .language-bash}
+
+```
+Currently Loaded Modulefiles:
+ 1) slurm/slurm/23.02.7
+```
+{: .output}
+
+So using `module unload` "un-loads" a module, and depending on how a site is
+ configured it may also unload all of the dependencies. If we wanted to unload
+ everything at once, we could run `module purge` (unloads everything).
+
+```
+{{ site.remote.prompt }} module purge
+{{ site.remote.prompt }} module list
+```
+{: .language-bash}
+
+```
+No Modulefiles Currently Loaded.
+```
+{: .output}

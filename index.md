@@ -6,11 +6,11 @@ root: .
 {% include gh_variables.html %}
 
 This workshop is an introduction to using high-performance computing systems
-effectively. We can't cover every case in just four hours' teaching time. 
-Instead, this workshop is intended to give students a good introduction and 
+effectively. We can't cover every case in just four hours' teaching time.
+Instead, this workshop is intended to give students a good introduction and
 overview of the tools available and how to use them effectively.
 
-We will be taking collaborative notes in [this document](https://etherpad.boisestate.edu/p/2024-04-09-hpc-intro).
+We will be taking collaborative notes in [this document][etherpad].
 
 > ## Prerequisites
 >
@@ -45,3 +45,4 @@ welcome.
 {: .callout}
 
 {% include links.md %}
+[etherpad]: https://etherpad.boisestate.edu/p/2025-09-10-hpc-intro
