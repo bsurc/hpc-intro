@@ -1,0 +1,58 @@
+services:
+  dev:
+    build: .
+    image: hpc-intro-jekyll
+    working_dir: /work
+    volumes:
+      - .:/work
+      - ./.bundle:/work/vendor/bundle        # cache gems for faster subsequent runs
+    environment:
+      # You MUST set this (see README in the repo)
+      # e.g. HPC_JEKYLL_CONFIG=_includes/snippets_library/YourInst_YourCluster_Slurm/_config_options.yml
+      HPC_JEKYLL_CONFIG: ${HPC_JEKYLL_CONFIG}
+      JEKYLL_ENV: development
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    command: serve
+
+  build:
+    build: .
+    image: hpc-intro-jekyll
+    working_dir: /work
+    volumes:
+      - .:/work
+      - ./.bundle:/work/vendor/bundle
+    environment:
+      HPC_JEKYLL_CONFIG: ${HPC_JEKYLL_CONFIG}
+      JEKYLL_ENV: production
+    command: build
+
+  pr-check:
+    build: .
+    image: hpc-intro-jekyll
+    environment:
+      REPO_URL: https://github.com/bsurc/hpc-intro.git
+      # Run with: PR=123 docker compose run --rm pr-check
+      PR: ${PR}
+      HPC_JEKYLL_CONFIG: ${HPC_JEKYLL_CONFIG}
+    volumes:
+      - ./.pr_builds:/output                 # built PR sites land here: ./.pr_builds/pr-<num>
+      - ./.bundle-pr:/work/vendor/bundle     # separate cache for PR builds
+    command: pr
+
+
+  pr-serve:
+    build: .
+    image: hpc-intro-jekyll
+    environment:
+      REPO_URL: https://github.com/bsurc/hpc-intro.git
+      PR: ${PR}
+      HPC_JEKYLL_CONFIG: ${HPC_JEKYLL_CONFIG}
+      PORT: ${PORT:-4000}
+      LR_PORT: ${LR_PORT:-35729}
+    # publish whatever PORT/LR_PORT you choose at runtime
+    ports:
+      - "${PORT:-4000}:${PORT:-4000}"
+      - "${LR_PORT:-35729}:${LR_PORT:-35729}"
+    command: pr-serve
